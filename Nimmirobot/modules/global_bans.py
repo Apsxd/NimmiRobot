@@ -16,7 +16,7 @@ from telegram.utils.helpers import mention_html
 
 import Nimmirobot.modules.sql.global_bans_sql as sql
 from Nimmirobot.modules.sql.users_sql import get_user_com_chats
-from AstrakoBot import (
+from Nimmirobot import (
     DEV_USERS,
     EVENT_LOGS,
     OWNER_ID,
