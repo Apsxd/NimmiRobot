@@ -73,7 +73,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
+Hi {}, [🎀](https://i.imgur.com/tPO1rZf.jpg) iam nimmi 
 I am a modular group management bot.
 
 You can find my list of available commands with /help.
@@ -87,7 +87,6 @@ the things I can help you with.
 *Main* commands available:
  • /help: PM's you this message.
  • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
  • /settings:
    • in PM: will send you your settings for all supported modules.
    • in a group: will redirect you to pm, with all that chat's settings.
@@ -100,7 +99,7 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-NIMMIROBOT_IMG = "https://i.imgur.com/clODIQE.jpg"
+NIMMIROBOT_IMG = "https://i.imgur.com/tPO1rZf.jpg"
 
 DONATE_STRING = """Heya."""
 
