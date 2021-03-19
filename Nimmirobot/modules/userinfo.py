@@ -31,7 +31,7 @@ from Nimmirobot.modules.sql.afk_sql import is_afk, check_afk_status
 from Nimmirobot.modules.sql.users_sql import get_user_num_chats
 from Nimmirobot.modules.helper_funcs.chat_status import sudo_plus
 from Nimmirobot.modules.helper_funcs.extraction import extract_user
-from Nimmirobot import telethn as AstrakoBotTelethonClient, DRAGONS, DEMONS
+from Nimmirobot import telethn as NimmirobotTelethonClient, DRAGONS, DEMONS
 
 
 @run_async
@@ -77,7 +77,7 @@ def get_id(update: Update, context: CallbackContext):
             )
 
 
-@AstrakoBotTelethonClient.on(
+@NimmirobotTelethonClient.on(
     events.NewMessage(pattern="/ginfo ", from_users=(DRAGONS or []) + (DEMONS or []))
 )
 async def group_info(event) -> None:
