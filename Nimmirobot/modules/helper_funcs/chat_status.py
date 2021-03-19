@@ -401,6 +401,6 @@ def connection_status(func):
 
 
 # Workaround for circular import with connection.py
-from AstrakoBot.modules import connection
+from Nimmirobot.modules import connection
 
 connected = connection.connected
