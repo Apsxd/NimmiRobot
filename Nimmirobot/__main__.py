@@ -73,7 +73,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, [🎀](https://i.imgur.com/tPO1rZf.jpg) iam nimmi 
+Hi {},iam nimmi 
 I am a modular group management bot.
 
 You can find my list of available commands with /help.
