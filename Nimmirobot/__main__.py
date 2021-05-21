@@ -73,8 +73,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {},
-Elsarobot is the most complete Bot to help you manage your groups easily and safely! 
+Hi {}, Elsarobot is the most complete Bot to help you manage your groups easily and safely! 
  
 👉🏻 Add me in a Supergroup and promote me as Admin to let me get in action!
  
@@ -83,14 +82,7 @@ Press /help to see all the commands and how they work!
 """
 
 HELP_STRINGS = """
-Welcome to the help menu!
- • /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all.
-
-
-{}
-And the following:
+{} Welcome to the help menu!:
 """.format(
     dispatcher.bot.first_name,
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
