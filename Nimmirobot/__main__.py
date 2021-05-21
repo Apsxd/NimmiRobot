@@ -83,16 +83,10 @@ Press /help to see all the commands and how they work!
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a modular group management bot and help admins manage their groups. Have a look at the following for an idea of some of \
-the things I can help you with.
-
-*Main* commands available:
- • /help: PM's you this message.
- • /help <module name>: PM's you info about that module.
+Welcome to the help menu!
  • /settings:
    • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
+   • in a group: will redirect you to pm, with all.
 
 
 {}
@@ -102,9 +96,9 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-NIMMIROBOT_IMG = "https://i.imgur.com/tPO1rZf.jpg"
+NIMMIROBOT_IMG = "https://i.imgur.com/1aKfIG3.jpg"
 
-DONATE_STRING = """Heya."""
+DONATE_STRING = """donation contact @tubots"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -657,7 +651,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Using long polling.")
+        LOGGER.info("Nimmibot Using long polling.")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
