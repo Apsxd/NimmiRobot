@@ -76,7 +76,8 @@ PM_START_TEXT = """
 Hi {}, This is a complete Bot to help you manage your groups easily and safely! 
  
 Add me in a Supergroup and promote me as Admin to let me get in action❗
- ❓ WHAT ARE THE COMMANDS? ❓
+ 
+❓ WHAT ARE THE COMMANDS? ❓
 Press /help to see all the commands and how they work!
 """
 
@@ -221,7 +222,7 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="guide",
-                                url="https://tubots",
+                                url="https://t.me/tubots",
                             )
                         ],
                         [
@@ -462,7 +463,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
+                                text="BACK",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
