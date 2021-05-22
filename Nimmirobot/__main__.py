@@ -78,6 +78,7 @@ Hi {}, This is a complete Bot to help you manage your groups easily and safely!
 💬Add me in a Supergroup and promote me as Admin to let me get in action.
  
 ❓ WHAT ARE THE COMMANDS? ❓
+
 Press /help to see all the commands and how they work!
 """
 
@@ -207,31 +208,29 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Add to your group",
+                                text="ADD TO.GROUP",
                                 url="t.me/{}?startgroup=true".format(
-                                    context.bot.username
+                                    context.bot.username,
                                 ),
-                            )
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="Support Group",
-                                url=f"https://t.me/unitedbotsupport",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="guide",
+                                text="SUPPORT",
+                                url=f"https://t.me/unitedbotsupport",
+                            ),
+                            InlineKeyboardButton(
+                                text="UPDATES",
                                 url="https://t.me/tubots",
-                            )
+                            ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="source code",
+                                text="SOURCE CODE",
                                 url="https://github.com/Basi-mon/Nimmi-Robot",
-                            )
+                            ),
                         ],
-                    ]
+                    ],
                 ),
             )
     else:
