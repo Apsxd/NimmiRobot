@@ -1,3 +1,19 @@
+# Config files, logs and stuff
+Nimmirobot/modules/helper_funcs/temp.txt
+Nimmirobot/elevated_users.json
+Nimmirobot/config.py
+Nimmirobot/config.ini
+log.txt
+kangsticker.png
+updates.txt
+
+# Session files
+Nimmirobot/*.session
+Nimmirobot/*.session-journal
+Nimmirobot.session-journal
+*.session-journal
+*.session
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +143,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# VS code and shit
+*.pyc
+.idea/
+.project
+.pydevproject
+.directory
+.vscode
+
+# Others
+*.mp3
+*.mp4
+*.otf
+*.png
+*.ttf
