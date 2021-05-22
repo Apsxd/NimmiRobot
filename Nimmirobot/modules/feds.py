@@ -2373,7 +2373,7 @@ def fed_owner_help(update: Update, context: CallbackContext):
 @run_async
 def fed_admin_help(update: Update, context: CallbackContext):
     update.effective_message.reply_text(
-        """*🔱 Fed Admins:*
+        """*Fed Admins:*
  • `/fban <user> <reason>`*:* Fed bans a user
  • `/unfban <user> <reason>`*:* Removes a user from a fed ban
  • `/fedinfo <fed_id>`*:* Information about the specified Federation
@@ -2391,7 +2391,7 @@ def fed_admin_help(update: Update, context: CallbackContext):
 @run_async
 def fed_user_help(update: Update, context: CallbackContext):
     update.effective_message.reply_text(
-        """*🎩 Any user:*
+        """*Any user:*
  • `/fbanstat`*:* Shows if you/or the user you are replying to or their username is fbanned somewhere or not
  • `/fednotif <on/off>`*:* Federation settings not in PM when there are users who are fbaned/unfbanned
  • `/frules`*:* See Federation regulations\n""",
@@ -2413,6 +2413,9 @@ Feds are now divided into 3 sections for your ease.
 • `/fedadminhelp`*:* Provides help for fed administration commands
 • `/feduserhelp`*:* Provides help for commands anyone can use
 
+just kanged feds.py from @saitamarobot 
+developed by @swada and team
+for support @tubots
 """
 
 NEW_FED_HANDLER = CommandHandler("newfed", new_fed)
