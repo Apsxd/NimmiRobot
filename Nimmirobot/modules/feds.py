@@ -171,7 +171,7 @@ def del_fed(update: Update, context: CallbackContext):
             [
                 [
                     InlineKeyboardButton(
-                        text="⚠️ Delete Federation ⚠️",
+                        text="Delete Federation",
                         callback_data="rmfed_{}".format(fed_id),
                     ),
                 ],
@@ -498,7 +498,7 @@ def fed_info(update: Update, context: CallbackContext):
     chat = update.effective_chat
     info = sql.get_fed_info(fed_id)
 
-    text = "<b>ℹ️ Federation Information:</b>"
+    text = "<b>Federation Information:</b>"
     text += "\nFedID: <code>{}</code>".format(fed_id)
     text += "\nName: {}".format(info["fname"])
     text += "\nCreator: {}".format(mention_html(owner.id, owner_name))
@@ -541,7 +541,7 @@ def fed_admin(update: Update, context: CallbackContext):
     info = sql.get_fed_info(fed_id)
 
     text = "<b>Federation Admin {}:</b>\n\n".format(info["fname"])
-    text += "👑 Owner:\n"
+    text += "Owner:\n"
     owner = bot.get_chat(info["owner"])
     try:
         owner_name = owner.first_name + " " + owner.last_name
@@ -551,9 +551,9 @@ def fed_admin(update: Update, context: CallbackContext):
 
     members = sql.all_fed_members(fed_id)
     if len(members) == 0:
-        text += "\n🔱 There are no admins in this federation"
+        text += "\nThere are no admins in this federation"
     else:
-        text += "\n🔱 Admin:\n"
+        text += "\nAdmin:\n"
         for x in members:
             user = bot.get_chat(x)
             text += " • {}\n".format(mention_html(user.id, user.first_name))
