@@ -420,10 +420,6 @@ def devlist(update: Update, context: CallbackContext):
 
 
 __help__ = f"""
-*Notice:*
-Nothing here . 
-
-
 Visit @{SUPPORT_CHAT} for more information.
 """
 
