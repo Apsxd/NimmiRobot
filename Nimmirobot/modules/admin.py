@@ -211,21 +211,15 @@ def set_title(update: Update, context: CallbackContext):
         return
 
     if not user_id:
-        message.reply_text(
-            "🦋its not a user babe."
-        )
+        message.reply_text("🦋its not a user babe.")
         return
 
     if user_member.status == "creator":
-        message.reply_text(
-            "🦋this shit is owner."
-        )
+        message.reply_text("🦋this shit is owner.")
         return
 
     if user_member.status != "administrator":
-        message.reply_text(
-            "Can't set title for non-admins!🥺."
-        )
+        message.reply_text("Can't set title for non-admins!🥺.")
         return
 
     if user_id == bot.id:
@@ -246,7 +240,9 @@ def set_title(update: Update, context: CallbackContext):
     try:
         bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
     except BadRequest:
-        message.reply_text("I can't set custom title for admins that I didn't promote!😁")
+        message.reply_text(
+            "I can't set custom title for admins that I didn't promote!😁"
+        )
         return
 
     bot.sendMessage(
