@@ -148,9 +148,7 @@ def connect_chat(update, context):
             gethistory = sql.get_history_conn(user.id)
             if gethistory:
                 buttons = [
-                    InlineKeyboardButton(
-                        text="CLOSE", callback_data="connect_close"
-                    ),
+                    InlineKeyboardButton(text="CLOSE", callback_data="connect_close"),
                     InlineKeyboardButton(
                         text="CLEAR HISTORY", callback_data="connect_clear"
                     ),
