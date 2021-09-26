@@ -22,18 +22,14 @@ def approve(update, context):
     user = update.effective_user
     user_id = extract_user(message, args)
     if not user_id:
-        message.reply_text(
-            "user not found babe💮"
-        )
+        message.reply_text("user not found babe💮")
         return ""
     try:
         member = chat.get_member(user_id)
     except BadRequest:
         return ""
     if member.status == "administrator" or member.status == "creator":
-        message.reply_text(
-            "User is already admin demote him and ban him🤭🤭."
-        )
+        message.reply_text("User is already admin demote him and ban him🤭🤭.")
         return ""
     if sql.is_approved(message.chat_id, user_id):
         message.reply_text(
@@ -122,14 +118,10 @@ def approval(update, context):
     user_id = extract_user(message, args)
     member = chat.get_member(int(user_id))
     if not user_id:
-        message.reply_text(
-            "this user is dead 🦋."
-        )
+        message.reply_text("this user is dead 🦋.")
         return ""
     if sql.is_approved(message.chat_id, user_id):
-        message.reply_text(
-            f"{member.user['first_name']} is an approved user 🥺."
-        )
+        message.reply_text(f"{member.user['first_name']} is an approved user 🥺.")
     else:
         message.reply_text(
             f"{member.user['first_name']} is not an approved user. They are affected by normal commands."

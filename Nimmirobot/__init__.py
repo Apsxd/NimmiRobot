@@ -39,18 +39,20 @@ if ENV:
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
-        DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
+        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
         DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "").split())
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        DEMONS = set(int(x) for x in os.environ.get("DEMONS", "").split())
+        SUPPORT_USERS = set(int(x) for x in os.environ.get("SUPPORT_USERS", "").split())
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        WOLVES = set(int(x) for x in os.environ.get("WOLVES", "").split())
+        WHITELIST_USERS = set(
+            int(x) for x in os.environ.get("WHITELIST_USERS", "").split()
+        )
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
@@ -103,18 +105,18 @@ else:
     OWNER_USERNAME = Config.OWNER_USERNAME
     ALLOW_CHATS = Config.ALLOW_CHATS
     try:
-        DRAGONS = set(int(x) for x in Config.DRAGONS or [])
+        SUDO_USERS = set(int(x) for x in Config.SUDO_USERS or [])
         DEV_USERS = set(int(x) for x in Config.DEV_USERS or [])
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        DEMONS = set(int(x) for x in Config.DEMONS or [])
+        SUPPORT_USERS = set(int(x) for x in Config.SUPPORT_USERS or [])
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        WOLVES = set(int(x) for x in Config.WOLVES or [])
+        WHITELIST_USERS = set(int(x) for x in Config.WHITELIST_USERS or [])
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
@@ -152,7 +154,7 @@ else:
     except ValueError:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
-DRAGONS.add(OWNER_ID)
+SUDO_USERS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 
 if not SPAMWATCH_API:
@@ -169,10 +171,10 @@ updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Nimmirobot", API_ID, API_HASH)
 dispatcher = updater.dispatcher
 
-DRAGONS = list(DRAGONS) + list(DEV_USERS)
+SUDO_USERS = list(SUDO_USERS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
-WOLVES = list(WOLVES)
-DEMONS = list(DEMONS)
+WHITELIST_USERS = list(WHITELIST_USERS)
+SUPPORT_USERS = list(SUPPORT_USERS)
 
 # Load at end to ensure all prev variables have been set
 from Nimmirobot.modules.helper_funcs.handlers import (

@@ -74,11 +74,9 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hi {}, This is a complete Bot to help you manage your groups easily and safely! 
-
-💬Add me in a Supergroup and promote me as Admin to let me get in action.
  
-❓ WHAT ARE THE COMMANDS? ❓
-
+Add me in a Supergroup and promote me as Admin to let me get in action❗
+ ❓ WHAT ARE THE COMMANDS? ❓
 Press /help to see all the commands and how they work!
 """
 
@@ -89,7 +87,7 @@ Welcome to the help menu!
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-NIMMIROBOT_IMG = "https://i.imgur.com/kL8Psdy.jpg"
+NIMMIROBOT_IMG = "https://i.imgur.com/1aKfIG3.jpg"
 
 DONATE_STRING = """donation contact @tubots"""
 
@@ -208,29 +206,31 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="ADD TO GROUP",
+                                text="Add to your group",
                                 url="t.me/{}?startgroup=true".format(
-                                    context.bot.username,
+                                    context.bot.username
                                 ),
-                            ),
+                            )
                         ],
                         [
                             InlineKeyboardButton(
-                                text="SUPPORT",
+                                text="Support Group",
                                 url=f"https://t.me/unitedbotsupport",
                             ),
-                            InlineKeyboardButton(
-                                text="UPDATES",
-                                url="https://t.me/tubots",
-                            ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="SOURCE CODE",
-                                url="https://github.com/Basi-mon/Nimmi-Robot",
-                            ),
+                                text="guide",
+                                url="https://tubots",
+                            )
                         ],
-                    ],
+                        [
+                            InlineKeyboardButton(
+                                text="source code",
+                                url="https://github.com/Basi-mon/Nimmi-Robot",
+                            )
+                        ],
+                    ]
                 ),
             )
     else:
@@ -389,7 +389,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="BACK", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
             ),
         )
 
@@ -462,7 +462,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="BACK",
+                                text="Back",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]

@@ -100,9 +100,7 @@ def check_flood(update, context) -> str:
         )
 
     except BadRequest:
-        msg.reply_text(
-            "i have no permission sir🥺."
-        )
+        msg.reply_text("i have no permission sir🥺.")
         sql.set_flood(chat.id, 0)
         return (
             "<b>{}:</b>"
